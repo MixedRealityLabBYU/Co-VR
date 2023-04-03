@@ -50,8 +50,12 @@ Several GameObjects are necessary for co-location to work. We will first go thro
 Since Meta Quest does not allow for transmission of the native Guardian boundary to other headsets (and also has a hard limit of 15 m x 15 m area), this package opts for disabling the native Guardian boundary and creating a new one using a procedural mesh system. 
 > Note: the native Guardian boundary on the Meta Quest does not have to be disabled if the desired play area is less than 15 m x 15 m.
 
-Components:
-1. 
+**Components:**
+- [Wall Drawer (Script)](src/WallDrawer.md)
+- [On Button Press (Script)](src/OnButtonPress.md)
+- [On Button Press (Script)](src/OnButtonPress.md)
+
+<img src="images/WallCreationInspector.png" alt="Wall Creation Component Settings" width="600">
 
 ##### Origin
 
@@ -68,8 +72,6 @@ Components:
 This is a simple ground object that 
 
 ##### Teleport Anchors (Optional)
-
-
 
 #### Proprietary GameObjects
 
