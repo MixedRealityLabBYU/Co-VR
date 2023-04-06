@@ -147,7 +147,7 @@ The GUI Manager manages the user interface during co-location setup. It is respo
     - Left Hand: OculusTouchForQuest2LeftModel - found in Oculus Integration package
     - Right Hand: OculusTouchForQuest2RightModel - found in Oculus Integration package
 
-<img src="images/GUIManagerInspector.png" alt="GUI Manager Component Settings" width="600">
+<img src="images/GuiManagerInspector.png" alt="GUI Manager Component Settings" width="600">
 
 #### Parent Object
 
