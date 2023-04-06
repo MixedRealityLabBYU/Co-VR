@@ -1,6 +1,8 @@
 # Co-VR
 Co-Located Virtual Reality, or Co-VR, centers around creating VR experiences that map players in the same physical and virtual space. Players can interact and see each other in the same virtual world while only being feet apart. We created this Unity package and associated documentation to help other Unity VR developers create Co-Located Experiences in Virtual Reality. We hope this tool will help add more exciting and groundbreaking VR experiences to the community.
 
+> To view this information alongside screenshots of the Inspector views of components, please visit the [Online Co-VR Documentation](https://github.com/wescol/Co-VR/blob/main/README.md).
+
 # Installation
 
 > Follow these directions carefully, as an incorrect setup may result in unexpected behavior or an unusable co-location setup.
@@ -22,7 +24,9 @@ The following list details packages that Co-VR is dependent upon. All packages c
 | com.unity.xr.management             | 4.2.1    |
 | com.unity.test-framework            | 1.1.31   |
 | com.unity.timeline                  | 1.6.4    |
-| Oculus Integration                  | 50.0   |
+| Oculus Integration                  | 50.0     |
+
+> Note: [Normcore SDK](https://normcore.io/) is a package owned by [Normal VR](https://www.normalvr.com/) that allows for multiplayer functionality. Due to the limited time and resources of our project, we opted to use Normcore to implement multiplayer functionality. However, Normcore is not required for co-location to work. If you wish to use a different multiplayer SDK, you will need to modify the code in the Co-VR package to work with your SDK.
 
 Once the dependencies have been imported, do the following:
 
@@ -57,16 +61,14 @@ Since Meta Quest does not allow for transmission of the native Guardian boundary
 - [Wall Drawer (Script)](src/WallDrawer.md)
     - Wall: Guardian.prefab
     - XR Rig: CoVRCameraRig.prefab
-    - Snap Distance: 0.1<span style="color: lime;">*</span>
-    - Wall Height: 3<span style="color: lime;">*</span>
+    - Snap Distance: 0.1*
+    - Wall Height: 3*
 - [On Button Press (Script)](src/OnButtonPress.md)
-    - Action: gripButton [RightHand XR Controller]<span style="color: lime;">*</span>
+    - Action: gripButton [RightHand XR Controller]*
     - On Press: Wall Creation (Wall Drawer) > WallDrawer.AddCorner
 - [On Button Press (Script)](src/OnButtonPress.md)
-    - Action: secondaryButton [RightHand XR Controller]<span style="color: lime;">*</span>
+    - Action: secondaryButton [RightHand XR Controller]*
     - On Press: Wall Creation (Wall Drawer) > WallDrawer.RemoveLastCorner
-
-<img src="images/WallCreationInspector.png" alt="Wall Creation Component Settings" width="600">
 
 #### Origin
 
@@ -80,25 +82,21 @@ The Origin is the point of reference that each headset uses to orient their virt
     - Match Orientation: Target Up and Forward
     - Teleporation Provider: CoVRCameraRig (Teleportation Provider) - found in CoVRCameraRig
 - [On Button Press (Script)](src/OnButtonPress.md)
-    - Action: thumbstickClicked [RightHand XR Controller]<span style="color: lime;">*</span>
+    - Action: thumbstickClicked [RightHand XR Controller]*
     - On Press: Origin > Origin.SetOrigin
 - Realtime Transform (Script) - Normcore package - DISABLED
     - Sync: Position true, Rotation true, Scale true
 - Realtime View (Script) - Normcore package - DISABLED
     - Components: Origin (Realtime Transform)
 
-<img src="images/OriginInspector.png" alt="Origin Component Settings" width="600">
-
 #### Passthrough Toggle
 
 The Passthrough Toggle is a simple GameObject that allows the user to toggle the passthrough camera on and off. This is useful for when the user needs to see their surroundings without taking off the headset.
 
 **Components:**
-- Toggle Passthrough (Script)
+- [Toggle Passthrough (Script)](src/TogglePassthrough.md)
     - XR Rig: CoVRCameraRig.prefab
     - Main Camera: CenterEyeAnchor (Camera) - found in CoVRCameraRig
-
-<img src="images/PassthroughToggleInspector.png" alt="Passthrough Toggle Component Settings" width="600">
 
 #### Guardian Prefab
 
@@ -109,20 +107,18 @@ The Guardian prefab is used to transmit the created wall data to the guests. It 
     - Mesh: None (Mesh) - set at runtime
 - Mesh Renderer
     - Materials: None (Material) - set at runtime
-- Guardian (Script)
-    - Wall Color: #00E5FF<span style="color: lime;">*</span>
-    - Wall Material: None (Material)<span style="color: lime;">*</span>
+- [Guardian (Script)](src/Guardian.md)
+    - Wall Color: #00E5FF*
+    - Wall Material: None (Material)*
 - Realtime View (Script) - Normcore package
     - Components: Guardian (Guardian)
-
-<img src="images/GuardianInspector.png" alt="Guardian Component Settings" width="600">
 
 #### GUI Manager
 
 The GUI Manager manages the user interface during co-location setup. It is responsible for displaying the correct UI elements at the correct times, including the Guardian wall creation UI, the origin setting UI, and the passthrough toggle UI.
 
 **Components:**
-- Gui Manager (Script)
+- [Gui Manager (Script)](src/GuiManager.md)
     - Current Phase: MAIN_MENU
     - Main Menu: MainMenu (GameObject)*
     - Host Menu: HostMenu (GameObject)*
@@ -147,8 +143,6 @@ The GUI Manager manages the user interface during co-location setup. It is respo
     - Left Hand: OculusTouchForQuest2LeftModel - found in Oculus Integration package
     - Right Hand: OculusTouchForQuest2RightModel - found in Oculus Integration package
 
-<img src="images/GuiManagerInspector.png" alt="GUI Manager Component Settings" width="600">
-
 #### Parent Object
 
 Currently, in order for "teleporting" around the scene to work in co-location, all GameObjects that are not involved in co-location must be parented to a single GameObject. This GameObject is then teleported around the scene, and all other GameObjects follow it.
@@ -158,8 +152,6 @@ Currently, in order for "teleporting" around the scene to work in co-location, a
     - Sync: Position true, Rotation true
 - Realtime View (Script) - Normcore package
     - Components: Parent Object (Realtime Transform)
-
-<img src="images/ParentObjectInspector.png" alt="Parent Object Component Settings" width="600">
 
 #### Ground & Ground Collider (Optional)
 
@@ -178,10 +170,6 @@ Ground Collider
     - Mesh: Plane
 - Mesh Collider
     - Mesh: Plane
-
-<img src="images/GroundInspector.png" alt="Ground Component Settings" width="600">
-
-<img src="images/GroundColliderInspector.png" alt="Ground Collider Component Settings" width="600">
 
 #### Teleport Anchors (Optional)
 
@@ -208,8 +196,6 @@ This is a modified version of the Realtime + VR Player prefab that ships with th
     - Left Hand: LeftHandAnchor (Transform)
     - Right Hand: RightHandAnchor (Transform)
 
-<img src="images/RealtimeVRPlayerInspector.png" alt="Realtime + VR Player Component Settings" width="600">
-
 #### CoVRCameraRig (Oculus Integration)
 
 This is a modified version of the OVRCameraRig prefab that ships with the Oculus Integration package on the Unity Asset Store. It performs various functions regarding locomotion and visualization. It also handles the passthrough camera, allowing for passthrough to be turned on and off.
@@ -227,7 +213,7 @@ This is a modified version of the OVRCameraRig prefab that ships with the Oculus
     - Enable Passthrough: true
 - OVR Passthrough Layer (Script) - Oculus Integration package
     - Placement: Underlay
-- Teleport Player (Script)
+- [Teleport Player (Script)](src/TeleportPlayer.md)
     - Anchor: Origin (Teleportation Anchor)
     - Provider: CoVRCameraRig (Teleportation Provider)
 - XR Origin
@@ -252,12 +238,3 @@ This is a modified version of the OVRCameraRig prefab that ships with the Oculus
     - Head: CenterEyeAnchor (Transform) - found in CoVRCameraRig
     - Left Hand: LeftHandAnchor (Transform) - found in CoVRCameraRig
     - Right Hand: RightHandAnchor (Transform) - found in CoVRCameraRig
-
-<img src="images/CoVRCameraRigInspector1.png" alt="CoVRCameraRig Component Settings 1" width="600">
-
-<img src="images/CoVRCameraRigInspector2.png" alt="CoVRCameraRig Component Settings 2" width="600">
-
-<img src="images/CoVRCameraRigInspector3.png" alt="CoVRCameraRig Component Settings 3" width="600">
-
-# Troubleshooting
-
