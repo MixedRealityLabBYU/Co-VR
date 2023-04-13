@@ -5,11 +5,11 @@
 
 ### XRRig
 *public GameObject XRRig*
-<br>
+<br>The rig required for VR interaction with wall drawing and passthrough.
 
 ### mainCamera
 *public Camera mainCamera*
-<br>
+<br>The main camera of the scene.
 
 <br>
 
@@ -17,7 +17,7 @@
 
 ### Toggle
 *public void Toggle()*
-<br>
+<br>Toggle passthrough on and off based on whether or not passthrough is currently enabled in the `XRRig`.
 
 ### SetPassthrough
 *public void SetPassthrough(bool isOn)*
