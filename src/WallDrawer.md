@@ -19,10 +19,10 @@ Determines the maximum distance in which the final drawn wall will snap to the o
 ### wallHeight
 *float wallHeight*
 
-Determines the height of the walls.
+Determines the height of the walls, starting at y == 0 and going until y == wallheight
 
 ### vertices
-*List\<Vector3\>*
+*List\<Vector3\> vertices*
 A list of Vector3 points that represent the local positions of the vertices of the wall mesh.
 
 ### triangles
