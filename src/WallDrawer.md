@@ -1,11 +1,11 @@
 # WallDrawer
 
-
+This script is used to create the wall mesh that the player draws in the VR environment. The script is attached to the `Wall Creation` GameObject in the scene.
 
 ## Properties
 
 ### wall
-*Gameobject wall*
+*GameObject wall*
 <br>Virtual "walls" or boundaries drawn by the player.
 
 ### XRRig
@@ -18,7 +18,7 @@
 
 ### wallHeight
 *float wallHeight*
-<br>Determines the height of the walls, starting at y == 0 and going until y == wallheight
+<br>Determines the height of the walls, starting at `y == 0` and going until `y == wallHeight`.
 
 ### vertices
 *List\<Vector3\> vertices*
@@ -42,15 +42,15 @@
 
 ### Start()
 *void Start()*
-<br>Creates a new Vector3 list and a new int list before the first frame and sets 'vertices' and 'triangles' to them repsectively.
+<br>Initializes `vertices` to a new Vector3 list and `triangles` to a new int list before the first frame.
 
 ### Update
 *void Update()*
 <br>Dynamically (once per frame) updates the wall mesh as the player draws it (according to the position of the player's drawing controller). If the player is not drawing a wall, the function will do nothing.
 
 ### AddCorner()
-*public void AddCorner(Vector3 corner)*
-<br>Checks whether or not the player is drawing a wall and adds a new corner to the wall mesh if so. If there are no exisiting corners, the function will add the first corner. If the player is not drawing a wall, the function will do nothing.
+*public void AddCorner()*
+<br>Checks whether or not the player is drawing a wall. If the player is currently drawing, the function adds a two Vector3 entries (at `y == 0` and `y == wallHeight`) with the position of the right XR controller in the `vertices` list, and adds 6 integer entries (corresponding to indices of the last 4 entries in the `vertices` list) to the `triangles` array if they are currently drawing. If there are no existing corners, the function will add the first corner. If the player is not drawing a wall, the function will do nothing.
 
 ### RemoveLastCorner()
 *public void RemoveLastCorner()*
