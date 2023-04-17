@@ -1,0 +1,39 @@
+{
+    "name": "com.byu.mrlab.covr",
+    "version": "1.0.0",
+    "displayName": "Co-VR",
+    "description": "Allows for co-located VR experiences in large shared spaces (e.g. basketball court, classroom).",
+    "unity": "2021.3",
+    "unityRelease": "16f1",
+    "documentationUrl": "https://github.com/wescol/Co-VR",
+    "dependencies": {
+        "com.normalvr.normcore": "2.4.1",
+        "com.unity.xr.oculus": "3.2.2",
+        "com.unity.xr.openxr": "1.5.3",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.ugui": "1.0.0",
+        "com.unity.xr.interaction.toolkit": "2.0.4",
+        "com.unity.xr.management": "4.2.1",
+        "com.unity.test-framework": "1.1.31",
+        "com.unity.timeline": "1.6.4"
+    },
+    "keywords": [
+        "Colocation",
+        "Co-location",
+        "Colocated",
+        "Co-located",
+        "Shared Space",
+        "Shared-Space",
+        "VR",
+        "Virtual Reality",
+        "Meta",
+        "Quest",
+        "Oculus",
+        "2"
+    ],
+    "author": {
+            "name": "BYU MR Lab",
+            "email": "mrlab@byu.edu",
+            "url": "https://mrlab.byu.edu/"
+        }
+    }
