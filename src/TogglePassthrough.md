@@ -1,5 +1,6 @@
 # TogglePassthrough
 
+This script allows for turning the passthrough layer on and off. It is intended to be attached to the `Passthrough Toggle` prefab.
 
 ## Properties
 
@@ -20,5 +21,6 @@
 <br>Toggle passthrough on and off based on whether or not passthrough is currently enabled in the `XRRig`.
 
 ### SetPassthrough
-*public void SetPassthrough(bool isOn)*
-<br>
+*public void SetPassthrough(bool isOn)*<br>
+Turn passthrough layer on or off.
+- **isOn**: *bool* - Whether to turn passthrough on or off 
