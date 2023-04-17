@@ -58,15 +58,15 @@ Since Meta Quest does not allow for transmission of the native Guardian boundary
 > Note: the native Guardian boundary on the Meta Quest does not have to be disabled if the desired play area is less than 15 m x 15 m.
 
 **Components:**
-- [Wall Drawer (Script)](src/WallDrawer.md)
+- [Wall Drawer (Script)](docs/WallDrawer.md)
     - Wall: Guardian.prefab
     - XR Rig: CoVRCameraRig.prefab
     - Snap Distance: 0.1*
     - Wall Height: 3*
-- [On Button Press (Script)](src/OnButtonPress.md)
+- [On Button Press (Script)](docs/OnButtonPress.md)
     - Action: gripButton [RightHand XR Controller]*
     - On Press: Wall Creation (Wall Drawer) > WallDrawer.AddCorner
-- [On Button Press (Script)](src/OnButtonPress.md)
+- [On Button Press (Script)](docs/OnButtonPress.md)
     - Action: secondaryButton [RightHand XR Controller]*
     - On Press: Wall Creation (Wall Drawer) > WallDrawer.RemoveLastCorner
 
@@ -75,13 +75,13 @@ Since Meta Quest does not allow for transmission of the native Guardian boundary
 The Origin is the point of reference that each headset uses to orient their virtual worlds in the correct physical location and rotation. The host sets the position and rotation of the origin, and the guests then use that to align their virtual worlds to match the host's.
 
 **Components:**
-- [Origin (Script)](src/Origin.md)
+- [Origin (Script)](docs/Origin.md)
     - XR Camera: Center Eye Anchor (Transform) - found in CoVRCameraRig
 - Teleportation Anchor
     - Interaction Manager: XR Interaction Manager (XR Interaction Manager) - found in CoVRCameraRig
     - Match Orientation: Target Up and Forward
     - Teleporation Provider: CoVRCameraRig (Teleportation Provider) - found in CoVRCameraRig
-- [On Button Press (Script)](src/OnButtonPress.md)
+- [On Button Press (Script)](docs/OnButtonPress.md)
     - Action: thumbstickClicked [RightHand XR Controller]*
     - On Press: Origin > Origin.SetOrigin
 - Realtime Transform (Script) - Normcore package - DISABLED
@@ -94,7 +94,7 @@ The Origin is the point of reference that each headset uses to orient their virt
 The Passthrough Toggle is a simple GameObject that allows the user to toggle the passthrough camera on and off. This is useful for when the user needs to see their surroundings without taking off the headset.
 
 **Components:**
-- [Toggle Passthrough (Script)](src/TogglePassthrough.md)
+- [Toggle Passthrough (Script)](docs/TogglePassthrough.md)
     - XR Rig: CoVRCameraRig.prefab
     - Main Camera: CenterEyeAnchor (Camera) - found in CoVRCameraRig
 
@@ -107,7 +107,7 @@ The Guardian prefab is used to transmit the created wall data to the guests. It 
     - Mesh: None (Mesh) - set at runtime
 - Mesh Renderer
     - Materials: None (Material) - set at runtime
-- [Guardian (Script)](src/Guardian.md)
+- [Guardian (Script)](docs/Guardian.md)
     - Wall Color: #00E5FF*
     - Wall Material: None (Material)*
 - Realtime View (Script) - Normcore package
@@ -118,7 +118,7 @@ The Guardian prefab is used to transmit the created wall data to the guests. It 
 The GUI Manager manages the user interface during co-location setup. It is responsible for displaying the correct UI elements at the correct times, including the Guardian wall creation UI, the origin setting UI, and the passthrough toggle UI.
 
 **Components:**
-- [Gui Manager (Script)](src/GuiManager.md)
+- [Gui Manager (Script)](docs/GuiManager.md)
     - Current Phase: MAIN_MENU
     - Main Menu: MainMenu (GameObject)*
     - Host Menu: HostMenu (GameObject)*
@@ -213,7 +213,7 @@ This is a modified version of the OVRCameraRig prefab that ships with the Oculus
     - Enable Passthrough: true
 - OVR Passthrough Layer (Script) - Oculus Integration package
     - Placement: Underlay
-- [Teleport Player (Script)](src/TeleportPlayer.md)
+- [Teleport Player (Script)](docs/TeleportPlayer.md)
     - Anchor: Origin (Teleportation Anchor)
     - Provider: CoVRCameraRig (Teleportation Provider)
 - XR Origin
