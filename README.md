@@ -70,6 +70,8 @@ Since Meta Quest does not allow for transmission of the native Guardian boundary
     - Action: secondaryButton [RightHand XR Controller]*
     - On Press: Wall Creation (Wall Drawer) > WallDrawer.RemoveLastCorner
 
+<img src="images/WallCreationInspector.png" alt="Wall Creation" width="600"/>
+
 #### Origin
 
 The Origin is the point of reference that each headset uses to orient their virtual worlds in the correct physical location and rotation. The host sets the position and rotation of the origin, and the guests then use that to align their virtual worlds to match the host's.
@@ -89,6 +91,8 @@ The Origin is the point of reference that each headset uses to orient their virt
 - Realtime View (Script) - Normcore package - DISABLED
     - Components: Origin (Realtime Transform)
 
+<img src="images/OriginInspector.png" alt="Origin" width="600"/>
+
 #### Passthrough Toggle
 
 The Passthrough Toggle is a simple GameObject that allows the user to toggle the passthrough camera on and off. This is useful for when the user needs to see their surroundings without taking off the headset.
@@ -97,6 +101,8 @@ The Passthrough Toggle is a simple GameObject that allows the user to toggle the
 - [Toggle Passthrough (Script)](docs/TogglePassthrough.md)
     - XR Rig: CoVRCameraRig.prefab
     - Main Camera: CenterEyeAnchor (Camera) - found in CoVRCameraRig
+
+<img src="images/PassthroughToggleInspector.png" alt="Passthrough Toggle" width="600"/>
 
 #### Guardian Prefab
 
@@ -112,6 +118,8 @@ The Guardian prefab is used to transmit the created wall data to the guests. It 
     - Wall Material: None (Material)*
 - Realtime View (Script) - Normcore package
     - Components: Guardian (Guardian)
+
+<img src="images/GuardianInspector.png" alt="Guardian Prefab" width="600"/>
 
 #### GUI Manager
 
@@ -143,6 +151,8 @@ The GUI Manager manages the user interface during co-location setup. It is respo
     - Left Hand: OculusTouchForQuest2LeftModel - found in Oculus Integration package
     - Right Hand: OculusTouchForQuest2RightModel - found in Oculus Integration package
 
+<img src="images/GuiManagerInspector.png" alt="GUI Manager" width="600"/>
+
 #### Parent Object
 
 Currently, in order for "teleporting" around the scene to work in co-location, all GameObjects that are not involved in co-location must be parented to a single GameObject. This GameObject is then teleported around the scene, and all other GameObjects follow it.
@@ -152,6 +162,8 @@ Currently, in order for "teleporting" around the scene to work in co-location, a
     - Sync: Position true, Rotation true
 - Realtime View (Script) - Normcore package
     - Components: Parent Object (Realtime Transform)
+
+<img src="images/ParentObjectInspector.png" alt="Parent Object" width="600"/>
 
 #### Ground & Ground Collider (Optional)
 
@@ -170,6 +182,10 @@ Ground Collider
     - Mesh: Plane
 - Mesh Collider
     - Mesh: Plane
+
+<img src="images/GroundInspector.png" alt="Ground" width="600"/>
+
+<img src="images/GroundColliderInspector.png" alt="Ground Collider" width="600"/>
 
 #### Teleport Anchors (Optional)
 
@@ -195,6 +211,8 @@ This is a modified version of the Realtime + VR Player prefab that ships with th
     - Head: CenterEyeAnchor (Transform)
     - Left Hand: LeftHandAnchor (Transform)
     - Right Hand: RightHandAnchor (Transform)
+
+<img src="images/RealtimeVRPlayerInspector.png" alt="Realtime + VR Player" width="600"/>
 
 #### CoVRCameraRig (Oculus Integration)
 
@@ -238,3 +256,9 @@ This is a modified version of the OVRCameraRig prefab that ships with the Oculus
     - Head: CenterEyeAnchor (Transform) - found in CoVRCameraRig
     - Left Hand: LeftHandAnchor (Transform) - found in CoVRCameraRig
     - Right Hand: RightHandAnchor (Transform) - found in CoVRCameraRig
+
+<img src="images/CoVRCameraRigInspector1.png" alt="CoVRCameraRig" width="600"/>
+
+<img src="images/CoVRCameraRigInspector2.png" alt="CoVRCameraRig" width="600"/>
+
+<img src="images/CoVRCameraRigInspector3.png" alt="CoVRCameraRig" width="600"/>
