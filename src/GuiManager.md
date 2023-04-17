@@ -83,7 +83,7 @@ The Normcore Realtime instance for the multiplayer session.
 
 ### defaultGuardian
 *public GameObject defaultGuardian*<br>
-The guardian prefab for the wall. Used by the [WallDrawer](WallDrawer.md) script.
+The guardian prefab for the wall. Used by the [Guardian](Guardian.md) script.
 
 ### networkGuardian
 *private GameObject networkGuardian*<br>
